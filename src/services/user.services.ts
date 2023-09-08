@@ -31,9 +31,7 @@ const read = async (): Promise<IUserRead> => {
 const update = async ( 
     userId: number, 
     payload: IUserUpdate
-): Promise<IUserReturn> => {
-    console.log(payload);
-    
+): Promise<IUserReturn> => {    
     const userRepository: Repository<User> = AppDataSource.getRepository(User);
 
     const oldUser: User | null = await userRepository.findOne({
